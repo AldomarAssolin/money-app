@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content-wrapper-box{
+    min-height: 77vh;
+    margin: 2%;
+    border: 1px solid #24f3fa;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+}
+.icons{
+    display: flex;
+    flex: 9;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 24px;
+}
+.icons i{
+    color: white;
+    margin-right: 14px;
+}
+.icons i:hover{
+    color: #222D32;
+}

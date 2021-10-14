@@ -1,0 +1,7 @@
+Criar pasta src;
+Dentro de src criar arquivo loader.js, esse arquivo será disparado no começo da aplicação, 
+    deve estar ligado a outros arquivos como o server.js(require('./config/server'))
+    Loader.js têm que estar configurado no packege.json ("main": "src/loader.js", e em script 
+    ("production": "pm2 start src/loader.js --name money-backend"));
+Dentro de src criar pasta config;
+    Dentro de config criar o arquivo server.js faz a configuração do servidor
