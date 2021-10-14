@@ -10,6 +10,6 @@ module.exports = (res, req, next) => {
     req.header('Access-Control-Allow-Credentials', true)
     req.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATH, DELETE')
     req.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
-    res.header('Access-Control-Max-Age', '86400')
+    req.header('Access-Control-Max-Age', '86400')
     next()
 }

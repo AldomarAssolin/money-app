@@ -5,6 +5,7 @@ import Header from '../common/template/Header'
 import Sidebar from '../common/template/Sidebar'
 import Footer from '../common/template/Footer'
 import Routes from './Routes'
+import Messages from '../common/msg/Messages.jsx'
 
 
 export default props => (
@@ -17,5 +18,6 @@ export default props => (
             </div>
         </div>
         <Footer/>
+        <Messages/>
     </div>
 )
