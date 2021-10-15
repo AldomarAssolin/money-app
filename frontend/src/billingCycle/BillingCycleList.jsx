@@ -1,29 +1,34 @@
 import React, { Component } from "react"
-import { bindActionCreators} from 'redux'
-import {connect} from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
-import {getList} from './billingCycleActions'
+import { getList, showUpdate } from './billingCycleActions'
 
-class BillingCycleList extends Component{
+class BillingCycleList extends Component {
 
-    componentWillMount(){
+    componentWillMount() {
         this.props.getList()
     }
 
-    renderRows(){
+    renderRows() {
         const list = this.props.list || []
         return list.map(bc => (
             <tr key={bc._id}>
                 <td>{bc.name}</td>
                 <td>{bc.month}</td>
                 <td>{bc.year}</td>
+                <td>
+                    <button className='btn btn-warning' onClick={() => this.props.showUpdate(bc)}>
+                        <i className='fa fa-pencil'></i>
+                    </button>
+                </td>
             </tr>
         ))
     }
-    
-    render(){
+
+    render() {
         console.log(this.props.list)
-        return(
+        return (
             <div>
                 <table className='table'>
                     <thead>
@@ -42,6 +47,6 @@ class BillingCycleList extends Component{
     }
 }
 
-const mapStateToProps = state => ({list: state.billingCycles.list})
-const mapDispatchToProps = dispatch => bindActionCreators({getList}, dispatch)
+const mapStateToProps = state => ({ list: state.billingCycles.list })
+const mapDispatchToProps = dispatch => bindActionCreators({ getList,showUpdate }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(BillingCycleList)

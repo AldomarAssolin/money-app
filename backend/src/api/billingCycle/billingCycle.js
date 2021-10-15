@@ -20,7 +20,7 @@ const debtSchema = new mongoose.Schema({
 
 //ciclo de pagamento
 //possui 5 atributos
-//Nome, Mês, Ano, Array de créditos(name and value) e Array de débitos(name, value, status and enum)
+//Nome, Mês, Ano, Array de créditos(name and value) e Array de débitos(name, value, status: type and enum)
 const billingCycleSchema = new mongoose.Schema({
     name: { type: String, required: true},
     month: { type: Number, min: 1, max: 12, required: true },
